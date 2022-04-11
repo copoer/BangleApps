@@ -128,7 +128,8 @@ Object.keys(settings.notify).forEach((statType) => {
       configureNotification(exs.stats[statType]);
   }
 });
-
+// I want the GPS to turn on immediately 
+Bangle.setGPSPower(1);
 // Handle GPS state change for icon
 Bangle.on("GPS", function(fix) {
   layout.gps.bgCol = fix.fix ? "#0f0" : "#f00";
